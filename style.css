@@ -84,6 +84,22 @@ a:hover {
   max-width: 80%;
 }
 
+.dl-content {
+  grid-column: 1/3;
+  grid-row: 2;
+}
+@media screen and (min-width: 767px) {
+  .dl-content {
+    padding: 0 1em;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  .header-title {
+    margin-bottom : .8em;
+  }
+}
+
 /*------------------------------------*\
     Filter (search box)
 \*------------------------------------*/
@@ -128,7 +144,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   /*font-size: .875em;*/
-  color: rgb(143, 143, 143);
+  color: #606060;
 }
 @media (prefers-color-scheme: dark) {
   table {
@@ -214,11 +230,11 @@ td a {
 }
 
 tr.parent a[href^="/"] {
-  color: #9099A3;
+  color: #606060;
 }
 
 .parent a[href^="/"]:hover {
-  color: #2281d0;
+  color: #005677;
 }
 
 /*------------------------------------*\
@@ -329,12 +345,17 @@ tr.parent a[href^="/"] {
 }
 
 .breadcrumb li {
-  color: rgb(154, 154, 154);
+  color: #606060;
   display: inline-block;
-  /*line-height: 10px;*/
-  /*margin: 0 9px 20px -10px;*/
+  line-height: 20px;
   padding: 0 15px;
   position: relative;
+}
+.breadcrumb li:first-child {
+  padding-left: 0;
+}
+.breadcrumb li:last-child {
+  padding-right: 0;
 }
 @media (prefers-color-scheme: dark) {
   .breadcrumb li {
@@ -347,12 +368,12 @@ tr.parent a[href^="/"] {
   border-right: 1.5px solid #000;
   content: '';
   display: block;
-  height: 50%;
+  height: 25%;
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
-  z-index: -1;
+  top: 25%;
+  z-index: 0;
   transform: skewX(45deg);
 }
 @media (prefers-color-scheme: dark) {
@@ -363,7 +384,7 @@ tr.parent a[href^="/"] {
 }
 
 .breadcrumb li::after {
-  bottom: 0;
+  bottom: 25%;
   top: auto;
   transform: skewX(-45deg);
 }
@@ -376,6 +397,8 @@ tr.parent a[href^="/"] {
 .breadcrumb li a {
   /*letter-spacing: -1px;*/
   text-decoration: none;
+  position: relative;
+  z-index: 2;
 }
 
 body > .section.wrapper {
