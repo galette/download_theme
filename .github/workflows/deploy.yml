@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: true
           fetch-depth: 0
       - name: Deploy to Dedicated Server
-        uses: Burnett01/rsync-deployments@8.0.4
+        uses: Burnett01/rsync-deployments@9.0.2
         with:
           switches: -avzr --delete --exclude=.git --exclude=.github
           path: ./
